@@ -323,7 +323,7 @@
 /* =========================================================
    데이터
    ========================================================= */
-const STORAGE_KEY = 'runningMarble_v1';
+const STORAGE_KEY = 'maranicfriends9 session1';
 const TOTAL_MISSION_CELLS = 14; // 실제 '미션' 칸 개수 (START, 무인도 제외)
 const MAX_LEVEL = 3; // 완료 단계: 1=초록, 2=파랑, 3=보라(마스터) — 블루마블 건물 업그레이드처럼 최대 3회
 const MAX_ROLLS_PER_DAY = 1; // 하루 최대 주사위 횟수
@@ -380,7 +380,7 @@ function miniLogoHtml(){
   return `<img src="${LOGO_DATA_URI}" alt="TIMP" style="height:50px; width:auto; display:block;">`;
 }
 
-// 10K 훈련 프로그램 (2주치, 8/1~8/16)
+// 10K 훈련 프로그램 (세션1, 8/1~8/15)
 const TRAINING_10K = [
   { week:1, date:'8/1 (토)', activity:'(3분 달리기 + 2분 걷기) × 5세트', desc:'- 준비 스트레칭 5분\n- (3분 달리기 + 2분 걷기) × 5세트\n- 정리 스트레칭' },
   { week:1, date:'8/2 (일)', activity:'30분 걷기', desc:'30분 이상 산책' },
@@ -397,10 +397,9 @@ const TRAINING_10K = [
   { week:2, date:'8/13 (목)', activity:'(4분 뛰기 + 2분 걷기) × 5세트', desc:'- 준비 스트레칭 5분\n- (4분 달리기 + 2분 걷기) × 5세트\n- 정리 스트레칭' },
   { week:2, date:'8/14 (금)', activity:'휴식 또는 걷기', desc:'휴식 또는 걷기' },
   { week:2, date:'8/15 (토)', activity:'(5분 뛰기 + 2분 걷기) × 7세트', desc:'- 준비 스트레칭 5분\n- (5분 달리기 + 2분 걷기) × 7세트\n- 정리 스트레칭' },
-  { week:2, date:'8/16 (일)', activity:'30분 걷기', desc:'30분 이상 산책' },
 ];
 
-// 하프 마라톤 훈련 프로그램 (2주치, 8/1~8/16)
+// 하프 마라톤 훈련 프로그램 (세션1, 8/1~8/15)
 const TRAINING_HALF = [
   { week:1, date:'8/1 (토)', activity:'3km 조깅', desc:'- 준비 스트레칭 5분\n- 3km 가볍게 달리기\n- 정리 스트레칭' },
   { week:1, date:'8/2 (일)', activity:'휴식 또는 걷기', desc:'휴식 또는 걷기' },
@@ -417,10 +416,9 @@ const TRAINING_HALF = [
   { week:2, date:'8/13 (목)', activity:'4km 조깅', desc:'- 준비 스트레칭 5분\n- 4km 가볍게 달리기\n- 정리 스트레칭' },
   { week:2, date:'8/14 (금)', activity:'휴식 또는 걷기', desc:'휴식 또는 걷기' },
   { week:2, date:'8/15 (토)', activity:'3km 조깅', desc:'- 준비 스트레칭 5분\n- 3km 가볍게 달리기\n- 정리 스트레칭' },
-  { week:2, date:'8/16 (일)', activity:'10km 조깅', desc:'- 준비 스트레칭 5분\n- 10km 가볍게 달리기\n- 정리 스트레칭' },
 ];
 
-// 풀코스 마라톤 훈련 프로그램 (2주치, 8/1~8/16)
+// 풀코스 마라톤 훈련 프로그램 (세션1, 8/1~8/15)
 const TRAINING_FULL = [
   { week:1, date:'8/1 (토)', activity:'5km 조깅', desc:'- 준비 스트레칭 5분\n- 5km 가볍게 달리기\n- 정리 스트레칭' },
   { week:1, date:'8/2 (일)', activity:'10km 조깅', desc:'- 준비 스트레칭 5분\n- 10km 가볍게 달리기\n- 정리 스트레칭' },
@@ -437,11 +435,10 @@ const TRAINING_FULL = [
   { week:2, date:'8/13 (목)', activity:'10km 조깅', desc:'- 준비 스트레칭 5분\n- 10km 가볍게 달리기\n- 정리 스트레칭' },
   { week:2, date:'8/14 (금)', activity:'휴식 또는 걷기', desc:'휴식 또는 걷기' },
   { week:2, date:'8/15 (토)', activity:'5km 조깅', desc:'- 준비 스트레칭 5분\n- 5km 가볍게 달리기\n- 정리 스트레칭' },
-  { week:2, date:'8/16 (일)', activity:'15km 조깅', desc:'- 준비 스트레칭 5분\n- 15km 달리기\n- 정리 스트레칭' },
 ];
 
 // 세 훈련 프로그램을 공통 화면에서 재사용하기 위한 메타 정보
-// 풀코스 기록반 세션1 (2주치, 8/1~8/16) — 완주 경험자를 위한 기록 향상 플랜
+// 풀코스 기록반 세션1 (세션1, 8/1~8/15) — 완주 경험자를 위한 기록 향상 플랜
 const TRAINING_FULL_RECORD = [
   { week:1, date:'8/1 (토)', activity:'조깅 30분 + 질주 5회', desc:'- 준비 스트레칭 5분\n- 조깅 30분 달리기\n- [70~80m 질주 + 걷기 회복] X 5회\n- 정리 스트레칭' },
   { week:1, date:'8/2 (일)', activity:'조깅 15km (빌드업)', desc:'- 준비 스트레칭 5분\n- 조깅 10km (MP+60~90초, 편안하게 시작)\n- 목표 페이스(MP) 유지 3km (레이스 페이스 감각 훈련)\n- 마무리 2km (MP-10초, 속도 올리되 무리하지 않기)\n- 정리 스트레칭' },
@@ -458,14 +455,13 @@ const TRAINING_FULL_RECORD = [
   { week:2, date:'8/13 (목)', activity:'템포런 5km', desc:'- 준비 스트레칭 5분\n- 워밍업 조깅 20분\n- 템포런 5km(MP-10초)\n- 회복조깅 1km\n- 정리 스트레칭' },
   { week:2, date:'8/14 (금)', activity:'조깅 40분', desc:'- 준비 스트레칭 5분\n- 조깅 40분\n- 정리 스트레칭' },
   { week:2, date:'8/15 (토)', activity:'휴식과 스트레칭', desc:'휴식과 스트레칭' },
-  { week:2, date:'8/16 (일)', activity:'조깅 18km (빌드업 LSD)', desc:'- 준비 스트레칭 5분\n- 조깅 12km (MP+60~90초, 편안하게 시작)\n- 목표 페이스(MP) 유지 3km (레이스 페이스 감각 훈련)\n- 마무리 3km (MP-5~10초, 속도 올리되 무리하지 않기)\n- 정리 스트레칭' },
 ];
 
 const TRAINING_PROGRAMS = {
-  training10k: { data: TRAINING_10K, title: '👟 첫 10K 도전', subtitle: '8/1 ~ 8/16 · 세션1' },
-  trainingHalf: { data: TRAINING_HALF, title: '🏃 첫 하프 마라톤', subtitle: '8/1 ~ 8/16 · 세션1' },
-  trainingFull: { data: TRAINING_FULL, title: '🏃\u200d♂️ 첫 풀코스 완주', subtitle: '8/1 ~ 8/16 · 세션1' },
-  trainingFullRecord: { data: TRAINING_FULL_RECORD, title: '📈 풀코스 기록반', subtitle: '8/1 ~ 8/16 · 세션1' },
+  training10k: { data: TRAINING_10K, title: '👟 첫 10K 도전', subtitle: '8/1 ~ 8/15 · 세션1' },
+  trainingHalf: { data: TRAINING_HALF, title: '🏃 첫 하프 마라톤', subtitle: '8/1 ~ 8/15 · 세션1' },
+  trainingFull: { data: TRAINING_FULL, title: '🏃\u200d♂️ 첫 풀코스 완주', subtitle: '8/1 ~ 8/15 · 세션1' },
+  trainingFullRecord: { data: TRAINING_FULL_RECORD, title: '📈 풀코스 기록반', subtitle: '8/1 ~ 8/15 · 세션1' },
 };
 
 // 각 훈련 프로그램 안내문 (진행률 카드 아래 '여기를 먼저 눌러주세요' 버튼에서 표시)
